@@ -276,8 +276,13 @@ class CustomDataset:
 
 
 if __name__=='__main__':
+    
+    out_path = './dataset/final_data/test_new/'
+    
+    if not os.path.exists(out_path):   
+        os.makedirs(out_path)
 
     base_img_dirs = ['./dataset/base_images_white','./dataset/base_images_white']#, '../../data/openphish_images']
     # dataset = CustomDataset(base_img_dirs,'./elements/','./dataset/final_data/train/',10000)
     # dataset = CustomDataset(base_img_dirs,'./elements/','./dataset/final_data/val/',1000)
-    dataset = CustomDataset(base_img_dirs,'./elements/','./dataset/final_data/test_new/',20)
+    dataset = CustomDataset(base_img_dirs,'./elements/', out_path, 20)
